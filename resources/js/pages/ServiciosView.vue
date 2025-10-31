@@ -91,12 +91,12 @@ onMounted(cargar)
   <div>
     <div class="flex items-center justify-between mb-4">
       <h1 class="text-2xl font-semibold">Servicios</h1>
-      <button @click="abrirNuevo" class="bg-black text-white rounded px-4 py-2">Nuevo</button>
+      <button @click="abrirNuevo" class="bg-black text-white rounded px-4 py-2  transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">Nuevo</button>
     </div>
 
     <div class="mb-4 flex gap-2">
       <input v-model="filtro" placeholder="Buscar por nombre, precio o minutos" class="border rounded px-3 py-2 w-96" />
-      <button class="border rounded px-3 py-2" @click="cargar">Actualizar</button>
+      <button class="text-sm text-white border px-3 py-1.5 rounded-lg hover:bg-green-900 bg-green-500 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110" @click="cargar">Actualizar</button>
     </div>
 
     <div v-if="cargando" class="text-gray-500">Cargando...</div>
@@ -116,8 +116,11 @@ onMounted(cargar)
           <td class="p-3">{{ currency.format(s.precio) }}</td>
           <td class="p-3">{{ s.duracion }} min</td>
           <td class="p-3 text-right space-x-3">
-            <button class="text-blue-600 hover:underline" @click="abrirEditar(s)">Editar</button>
-            <button class="text-red-600 hover:underline" @click="eliminarServicio(s.id)">Eliminar</button>
+            <div class="flex space-x-2">
+           <button class="text-sm text-white border px-3 py-1.5 rounded-lg hover:bg-yellow-900 bg-yellow-500 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110" @click="abrirEditar(s)">Editar</button>
+            <button class="text-sm text-white border px-3 py-1.5 rounded-lg hover:bg-red-900 bg-red-500 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110" @click="eliminarServicio(s.id)">Eliminar</button>
+            </div>
+            
           </td>
         </tr>
         <tr v-if="!filtrados.length">

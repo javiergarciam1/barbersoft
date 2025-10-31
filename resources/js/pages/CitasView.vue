@@ -205,7 +205,7 @@ onMounted(loadBase)
 
     <div class="flex items-center gap-3 mb-3">
       <h2 class="text-xl font-semibold">Citas del {{ fecha }}</h2>
-      <button @click="loadCitas" class="text-sm underline">Actualizar</button>
+      <button @click="loadCitas" class="text-sm text-white border px-3 py-1.5 rounded-lg hover:bg-green-900 bg-green-500 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">Actualizar</button>
     </div>
 
     <div v-if="loading">Cargando…</div>
@@ -218,7 +218,7 @@ onMounted(loadBase)
           <th class="text-left p-2 border">Barbero</th>
           <th class="text-left p-2 border">Servicio</th>
           <th class="text-left p-2 border">Estado</th>
-          <th class="p-2 border"></th>
+          <th class="p-2 border">Acciones</th>
         </tr>
       </thead>
       <tbody>
@@ -240,8 +240,8 @@ onMounted(loadBase)
             </select>
           </td>
 
-          <td class="p-2 border">
-            <button @click="eliminar(c.id)" class="text-red-600 underline">Eliminar</button>
+          <td class="p-2 border flex justify-center">
+            <button @click="eliminar(c.id)" class="text-sm text-white border px-3 py-1.5 rounded-lg hover:bg-red-900 bg-red-500 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">Eliminar</button>
           </td>
         </tr>
       </tbody>

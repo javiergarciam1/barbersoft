@@ -94,7 +94,7 @@ onMounted(cargar)
   <div>
     <div class="flex items-center justify-between mb-4">
       <h1 class="text-2xl font-semibold">Barberos</h1>
-      <button @click="abrirNuevo" class="bg-black text-white rounded px-4 py-2">
+      <button @click="abrirNuevo" class="bg-black text-white rounded px-4 py-2 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
         Nuevo
       </button>
     </div>
@@ -106,14 +106,14 @@ onMounted(cargar)
         placeholder="Buscar por nombre o teléfono"
         class="border rounded px-3 py-2 w-80"
       />
-      <button @click="cargar" class="border rounded px-3 py-2">Actualizar</button>
+      <button @click="cargar" class="text-sm text-white border px-3 py-1.5 rounded-lg hover:bg-green-900 bg-green-500 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">Actualizar</button>
     </div>
 
     <div v-if="cargando" class="text-gray-500">Cargando...</div>
 
     <table v-else class="w-full bg-white border rounded overflow-hidden">
       <thead class="bg-gray-50">
-        <tr>
+        <tr class="">
           <th class="text-left p-3 border-b">Nombre</th>
           <th class="text-left p-3 border-b">Teléfono</th>
           <th class="text-right p-3 border-b w-48">Acciones</th>
@@ -124,8 +124,11 @@ onMounted(cargar)
           <td class="p-3">{{ b.nombre }}</td>
           <td class="p-3">{{ b.telefono || '—' }}</td>
           <td class="p-3 text-right space-x-3">
-            <button class="text-blue-600 hover:underline" @click="abrirEditar(b)">Editar</button>
-            <button class="text-red-600 hover:underline" @click="eliminarBarbero(b.id)">Eliminar</button>
+            <div class="flex space-x-2">
+            <button class="text-sm text-white border px-3 py-1.5 rounded-lg hover:bg-yellow-900 bg-yellow-500 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110" @click="abrirEditar(b)">Editar</button>
+            <button class="text-sm text-white border px-3 py-1.5 rounded-lg hover:bg-red-900 bg-red-500 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110" @click="eliminarBarbero(b.id)">Eliminar</button>
+            </div>
+            
           </td>
         </tr>
         <tr v-if="!filtrados.length">

@@ -33,7 +33,7 @@ onMounted(cargar);
   <div class="max-w-4xl">
     <div class="flex items-center justify-between mb-4">
       <h1 class="text-2xl font-bold">Clientes</h1>
-      <button @click="abrirNuevo" class="px-3 py-2 bg-black text-white rounded">Nuevo</button>
+      <button @click="abrirNuevo" class="px-3 py-2 bg-black text-white rounded transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">Nuevo</button>
     </div>
     <p class="text-sm h-5" :class="{'text-green-600': msg.startsWith('✅')}">{{ msg }}</p>
 
@@ -43,7 +43,7 @@ onMounted(cargar);
           <th class="p-2 border text-left">Nombre</th>
           <th class="p-2 border text-left">Teléfono</th>
           <th class="p-2 border text-left">Correo</th>
-          <th class="p-2 border w-36"></th>
+          <th class="p-2 border w-36">Acciones</th>
         </tr>
       </thead>
       <tbody>
@@ -52,8 +52,11 @@ onMounted(cargar);
           <td class="p-2 border">{{ c.telefono }}</td>
           <td class="p-2 border">{{ c.correo }}</td>
           <td class="p-2 border">
-            <button class="underline mr-2" @click="abrirEditar(c)">Editar</button>
-            <button class="underline text-red-600" @click="eliminar(c.id)">Eliminar</button>
+            <div class="flex space-x-2">
+          <button class="text-sm text-white border px-3 py-1.5 rounded-lg hover:bg-yellow-900 bg-yellow-500 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110" @click="abrirEditar(c)">Editar</button>
+            <button class="text-sm text-white border px-3 py-1.5 rounded-lg hover:bg-red-900 bg-red-500 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110" @click="eliminar(c.id)">Eliminar</button>
+            </div>
+            
           </td>
         </tr>
       </tbody>

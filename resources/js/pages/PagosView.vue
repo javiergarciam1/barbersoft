@@ -89,11 +89,11 @@ onMounted(filtrar)
           <option value="anulado">anulado</option>
         </select>
       </div>
-      <button class="px-4 py-2 rounded bg-black text-white" @click="filtrar">Filtrar</button>
+      <button class="px-4 py-2 rounded bg-black text-white transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110" @click="filtrar">Filtrar</button>
 
       <div class="flex-1"></div>
 
-      <button class="px-4 py-2 rounded bg-black text-white" @click="() => { showModal = true; loadCitas(); }">
+      <button class="px-4 py-2 rounded bg-black text-white transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110" @click="() => { showModal = true; loadCitas(); }">
         Nuevo pago
       </button>
     </div>
@@ -112,7 +112,7 @@ onMounted(filtrar)
             <th class="p-2 border">Monto</th>
             <th class="p-2 border">Estado</th>
             <th class="p-2 border">Fecha</th>
-            <th class="p-2 border"></th>
+            <th class="p-2 border">Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -126,7 +126,7 @@ onMounted(filtrar)
             <td class="p-2 border capitalize">{{ p.estado }}</td>
             <td class="p-2 border">{{ p.pagado_at ?? (p.created_at?.slice(0,10)) }}</td>
             <td class="p-2 border text-right">
-              <button class="text-red-600" @click="eliminarPago(p)">Eliminar</button>
+              <button class="text-sm text-white border px-3 py-1.5 rounded-lg hover:bg-red-900 bg-red-500 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110" @click="eliminarPago(p)">Eliminar</button>
             </td>
           </tr>
           <tr v-if="!pagos.length">
@@ -139,7 +139,7 @@ onMounted(filtrar)
     <!-- Modal simple -->
     <div v-if="showModal" class="fixed inset-0 bg-black/40 flex items-center justify-center">
       <div class="bg-white rounded p-4 w-[480px]">
-        <h2 class="text-lg font-semibold mb-3">Nuevo pago</h2>
+        <h2 class="text-lg font-semibold mb-3 ">Nuevo pago</h2>
 
         <div class="grid grid-cols-2 gap-3">
           <label class="text-sm flex flex-col">

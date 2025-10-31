@@ -47,7 +47,7 @@ onMounted(fetchData)
       </div>
       <div class="flex items-center gap-2">
         <input type="month" v-model="month" class="border rounded-lg px-3 py-2" />
-        <button @click="fetchData" class="px-4 py-2 rounded-lg bg-black text-white">Aplicar</button>
+        <button @click="fetchData" class="px-4 py-2 rounded-lg bg-black text-white transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">Aplicar</button>
       </div>
     </div>
 
@@ -143,10 +143,10 @@ onMounted(fetchData)
 
     <!-- Export -->
     <div class="flex items-center gap-3">
-      <a :href="`/api/reportes/export/excel?month=${encodeURIComponent(month)}`" class="px-4 py-2 rounded-lg border hover:bg-gray-50">
+      <a :href="`/api/reportes/export/excel?month=${encodeURIComponent(month)}`" class="text-white bg-green-500 hover:bg-green-900 px-4 py-2 rounded-lg border transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
         ⤓ Exportar Excel (.xlsx)
       </a>
-      <a :href="`/api/reportes/export/pdf?month=${encodeURIComponent(month)}`" class="px-4 py-2 rounded-lg border hover:bg-gray-50">
+      <a :href="`/api/reportes/export/pdf?month=${encodeURIComponent(month)}`" class="text-white bg-red-500 hover:bg-red-900 px-4 py-2 rounded-lg border transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
         ⤓ Generar PDF
       </a>
     </div>

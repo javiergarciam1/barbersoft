@@ -168,7 +168,7 @@ onMounted(loadAll)
             <span class="text-lg font-semibold">Citas de Hoy</span>
           </div>
           <button
-            class="text-sm border px-3 py-1.5 rounded-lg hover:bg-gray-50"
+            class="text-sm text-white border px-3 py-1.5 rounded-lg hover:bg-green-900 bg-green-500 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
             @click="loadAll"
           >
             Actualizar
